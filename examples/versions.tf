@@ -6,7 +6,7 @@ terraform {
       # Change this if you are pulling from
       # the Terraform registry
       source  = "example.com/example/twitter"
-      version = "<version of provider (ex: v0.1.0)>"
+      version = "<version of provider (ex: 0.1.0)>"
     }
   }
   required_version = ">= 0.13"
