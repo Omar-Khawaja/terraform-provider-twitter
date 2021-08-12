@@ -24,11 +24,7 @@ esac
 
 OS_ARCH="$OS"_"$ARCH"
 
-# This remove the leading v (v0.1.0 becomes 0.1.0)
-# This is needed for the local directory layout
-PLUGIN_VERSION="$(echo $(git describe --tags --abbrev=0) | cut -d'v' -f2)"
-
-TF_PLUGIN_DIR="$HOME/.terraform.d/plugins/example.com/example/twitter/$PLUGIN_VERSION/$OS_ARCH"
+TF_PLUGIN_DIR="$HOME/.terraform.d/plugins/example.com/local/twitter/${VERSION}/$OS_ARCH"
 
 if [[ ! -d "$TF_PLUGIN_DIR" ]]; then
     echo "The Terraform plugin directory does not exist"
@@ -39,7 +35,7 @@ fi
 
 echo "Installing plugin..."
 
-go build -o terraform-provider-twitter_$(git describe --tags --abbrev=0) ..
-mv terraform-provider-twitter_$(git describe --tags --abbrev=0) $TF_PLUGIN_DIR
+go build -o terraform-provider-twitter_"${VERSION}" ..
+mv terraform-provider-twitter_"${VERSION}" "$TF_PLUGIN_DIR"
 
 echo "Plugin has been installed."

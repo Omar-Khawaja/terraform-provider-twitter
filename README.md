@@ -22,9 +22,18 @@ This provider requires the following environment variables to be set:
 
 ### Build and Installation
 
-Run `make install` to build the plugin and install it in the necessary directory for Terraform to detect it.
+Run `VERSION="<your version>" make install` to build the plugin and install it in the necessary directory for Terraform to detect it. An example command is show below:
+
+```shell
+$ VERSION="0.5.0" make install
+```
 
 If you want to just build the plugin and move it to a different directory
-yourself, run `make build` to build the plugin.
+yourself, run `VERSION="<your version"> make build` to build the plugin.
+
+####
+```shell
+$ VERSION="0.5.0" make build
+```
 
 See the [local_development](./examples/local_development) directory for a sample Terraform config that uses a local copy of the provider.
