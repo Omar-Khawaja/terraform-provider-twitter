@@ -29,7 +29,7 @@ $ VERSION="0.5.0" make install
 ```
 
 If you want to just build the plugin and move it to a different directory
-yourself, run `VERSION="<your version"> make build` to build the plugin.
+yourself, run `VERSION="<your version>" make build` to build the plugin.
 
 ####
 ```shell
